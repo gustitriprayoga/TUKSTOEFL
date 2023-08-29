@@ -19,7 +19,7 @@
                 </div>
             </div>
             <!--end breadcrumb-->
-            <h4 class="mb-0 text-uppercase text-center">Pilih Kategori Sesuai Minatmu.....</h4>
+            <h4 class="mb-0 text-uppercase text-center">Pilih Kategori Kategori</h4>
             <hr/>
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" v-for="category in categories">

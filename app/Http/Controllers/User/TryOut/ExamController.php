@@ -88,9 +88,9 @@ class ExamController extends Controller
 
         $transactions = Transaction::where(['user_id' => Auth::user()->id,'voucher_used' => 1, 'exam_id' => $exam->id])->get();
 
-        if(count($transactions) == 0) {
-            return redirect()->back()->with('error', 'Anda tidak memiliki akses ke try out dengan judul <b>'.strtoupper(strtolower($exam->title)).'</b>, silakan lakukan pembelian terlebih dahulu.');
-        } 
+        // if(count($transactions) == 0) {
+        //     return redirect()->back()->with('error', 'Anda tidak memiliki akses ke try out dengan judul <b>'.strtoupper(strtolower($exam->title)).'</b>, silakan lakukan pembelian terlebih dahulu.');
+        // } 
 
         $grade = Grade::where('exam_id', $id)->where('user_id', auth()->user()->id)->first();
         $gradeOld = empty($grade->grade_old) ? 0 : $grade->grade_old;

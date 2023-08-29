@@ -20,8 +20,8 @@ class UserSeeder extends Seeder
         User::insert([
             [
                 "id" => "20b2a4122c614bb68e41b1a6f3f37780",
-                "name" => "Admin MyEnglish",
-                "email" => "administrator@myenglish.com",
+                "name" => "Admin",
+                "email" => "adminbahasa@gmail.com",
                 "email_verified_at" => null,
                 "password" => bcrypt('12345678'),
                 "level" => 1,

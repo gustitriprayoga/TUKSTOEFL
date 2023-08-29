@@ -59,7 +59,7 @@
                                     <Link :href="`/user/categories/${exam.category_id}/exams/${exam.id}`" class="btn btn-outline-primary w-100">Kerjakan Soal</Link>
                                 </div>
                                 <div v-else>
-                                    <a href="#" @click.prevent="buyExam(exam.id)" class="btn btn-outline-danger w-100 btn-block">Beli Paket Try Out</a>
+                                    <a href="#" @click.prevent="buyExam(exam.id)" class="btn btn-outline-danger w-100 btn-block">Kerjakan Soal</a>
                                 </div>
                             </div>
                         </div>

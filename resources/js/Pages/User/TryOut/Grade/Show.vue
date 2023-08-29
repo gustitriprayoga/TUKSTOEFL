@@ -28,7 +28,7 @@
                         </div>
                         <div class="ms-auto">
                             <Link href="/user/grades" class="btn btn-primary btn-sm">Kembali</Link>
-                            <!-- <a :href="`/user/grades/${grade.id}/certificate`" target="_blank" class="btn btn-danger btn-sm m-1">Cetak Sertifikat</a> -->
+                            <a :href="`/user/grades/${grade.id}/certificate`" target="_blank" class="btn btn-danger btn-sm m-1">Cetak Sertifikat</a>
                         </div>
                     </div>
                 </div>

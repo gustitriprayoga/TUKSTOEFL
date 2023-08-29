@@ -72,7 +72,7 @@ class CreateNewUser implements CreatesNewUsers
             'address' => $input['address'],
             'phone_number' => $input['phone_number'],
             'gender' => $input['gender'],
-            'is_member' => 0,
+            'is_member' => 1,
         ]);
           
         $message = "*Mohon dibaca dan dipahami!*\n\n_Hallo, saya admin dari ".env('APP_NAME').", akun anda telah terdaftar di platform kami, berikut link untuk aktivasi akun anda._\n\nNama: ".$user->name."\nEmail: ".$user->email."\n\nBerikut link verifikasi anda\n".env('APP_URL')."/user/".$user->id."/activation \n\n*Jika link tidak bisa diklik, silakan copy dan paste dibrowser anda.*\n\n_terimakasih telah menjadi bagian dari kami, semoga ".env('APP_NAME')." dapat membantu proses belajar anda. aamiin._";
