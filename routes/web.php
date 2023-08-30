@@ -81,7 +81,7 @@ Route::group(['middleware' => ['auth', 'admin', 'accountIsActive']], function() 
 });
 
 // user site
-Route::group(['middleware' => ['auth', 'accountIsActive']], function() {
+Route::group(['middleware' => ['auth']], function() {
     Route::group(['prefix' => 'user', 'namespace' => '\App\Http\Controllers\User', 'as' => 'user.'], function() {
         // dashboard
         Route::get('/dashboard', 'DashboardController')->name('user.dashboard');
@@ -107,7 +107,7 @@ Route::group(['middleware' => ['auth', 'accountIsActive']], function() {
             Route::post('exams/{id}/audio-played', 'ExamController@audioPlayed')->name('exams.audio-played');
             Route::post('exams/{id}/exam-end', 'ExamController@endExam')->name('exams.exam-end');
             Route::post('exams/{id}/decrement-tolerance', 'ExamController@decrementTolerance')->name('exams.decrement-tolerance');
-            
+
             // grade
             Route::resource('grades', 'GradeController')->only(['index', 'show']);
             Route::get('grades/{id}/certificate', 'GradeController@certificate');

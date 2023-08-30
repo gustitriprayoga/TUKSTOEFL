@@ -18,10 +18,10 @@ class AccountIsActive
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->is_active == 0) {
-            Auth::logout();
-            return redirect('login')->with('success', 'Akun anda berhasil didaftarkan, silakan cek whatsapp untuk mendapatkan link aktivasi, jika tidak mendapatkannya silakan hubungi admin.');
-        }
+        // if(auth()->user()->is_active == 0) {
+        //     Auth::logout();
+        //     return redirect('login')->with('success', 'Akun anda berhasil didaftarkan, silakan cek whatsapp untuk mendapatkan link aktivasi, jika tidak mendapatkannya silakan hubungi admin.');
+        // }
         return $next($request);
     }
 }
