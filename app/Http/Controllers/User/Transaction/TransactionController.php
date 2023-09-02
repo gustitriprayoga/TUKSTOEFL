@@ -65,7 +65,7 @@ class TransactionController extends Controller
 
             $transaction = $this->transactionService->createTransacationWithExamId($id);
 
-            return redirect()->route('user.transactions.show', $transaction->id);
+            return redirect()->back();
 
         } catch (\Throwable $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan. '.$e->getMessage().' - file: '. $e->getFile(). ' -line '. $e->getLine());

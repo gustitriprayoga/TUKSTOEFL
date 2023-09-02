@@ -22,11 +22,12 @@ class Student extends Model
     protected $fillable = [
         'id',
         'user_id',
-        'province_id',
-        'city_id',
-        'district_id',
-        'village_id',
-        'address',
+        'jurusan',
+        // 'province_id',
+        // 'city_id',
+        // 'district_id',
+        // 'village_id',
+        // 'address',
         'phone_number',
         'gender',
         'is_member', // true, false

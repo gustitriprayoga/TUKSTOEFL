@@ -25,15 +25,18 @@ class UserRequest extends FormRequest
     {
         if(request()->isMethod('PUT')) {
             $email = 'required|string|email|max:191|unique:users,email,'.request()->id;
+            $nim_nidn = 'required|string|nim_nidn|max:191|unique:users,nim_nidn,'.request()->id;
             $password = 'sometimes|confirmed';
         } else {
             $email = 'required|string|email|max:191|unique:users';
+            $nim_nidn = 'required|string|nim_nidn|max:191|unique:users';
             $password = 'required|confirmed';
         }
 
         return [
             'name' => 'required|string|max:191',
             'email' => $email,
+            'nim_nidn' => $nim_nidn,
             'password' => $password,
             'level' => 'required',
             'is_active' => 'required',
@@ -45,6 +48,7 @@ class UserRequest extends FormRequest
         return [
             'name' => __('user.name'),
             'email' => __('user.email'),
+            'nim_nidn' => __('user.nim_nidn'),
             'password' => __('user.password'),
             'level' => __('user.level'),
             'is_active' => __('user.is_active'),

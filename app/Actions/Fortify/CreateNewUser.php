@@ -24,16 +24,18 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input)
     {
         $niceNames = [
-            'province_id' => 'Provinsi'
+            'jurusan' => 'jurusan'
         ];
 
         $validator = Validator::make($input, [
             'name' => 'required|string|max:255',
-            'province_id' => 'required',
-            'city_id' => 'required',
-            'district_id' => 'required',
-            'village_id' => 'required',
-            'address' => 'required',
+            'nim_nidn'   => 'required|string|max:50',
+            'jurusan' => 'required|string|max:255',
+            // 'province_id' => 'required',
+            // 'city_id' => 'required',
+            // 'district_id' => 'required',
+            // 'village_id' => 'required',
+            // 'address' => 'required',
             'phone_number' => 'required|numeric|unique:students',
             'gender' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
@@ -42,11 +44,13 @@ class CreateNewUser implements CreatesNewUsers
         [], // messages
         [
             'name' => __('user.name'),
-            'province_id' => __('user.province_id'),
-            'city_id' => __('user.city_id'),
-            'district_id' => __('user.district_id'),
-            'village_id' => __('user.village_id'),
-            'address' => __('user.address'),
+            'nim_nidn' => _('user.nim_nidn'),
+            'jurusan' => _('user.jurusan'),
+            // 'province_id' => __('user.province_id'),
+            // 'city_id' => __('user.city_id'),
+            // 'district_id' => __('user.district_id'),
+            // 'village_id' => __('user.village_id'),
+            // 'address' => __('user.address'),
             'phone_number' => __('user.phone_number'),
             'gender' => __('user.gender'),
             'email' => __('user.email'),
@@ -58,18 +62,21 @@ class CreateNewUser implements CreatesNewUsers
             'id' => Uuid::uuid4()->getHex(),
             'name' => $input['name'],
             'email' => $input['email'],
+            'nim_nidn' => $input['nim_nidn'],
             'password' => Hash::make($input['password']),
             'level' => 2,
+            'is_active' => 1,
         ]);
 
         Student::create([
             'id' => Uuid::uuid4()->getHex(),
             'user_id' => $user->id,
-            'province_id' => $input['province_id'],
-            'city_id' => $input['city_id'],
-            'district_id' => $input['district_id'],
-            'village_id' => $input['village_id'],
-            'address' => $input['address'],
+            'jurusan' => $input['jurusan'],
+            // 'province_id' => $input['province_id'],
+            // 'city_id' => $input['city_id'],
+            // 'district_id' => $input['district_id'],
+            // 'village_id' => $input['village_id'],
+            // 'address' => $input['address'],
             'phone_number' => $input['phone_number'],
             'gender' => $input['gender'],
             'is_member' => 1,

@@ -24,10 +24,10 @@
                                             </div>
                                         </div>
                                         <div class="mb-3 mt-0">
-                                            <label class="form-label">Email</label>
-                                            <input type="email" v-model="form.email" :class="{ 'is-invalid': errors.email }" class="form-control" placeholder="Email">
-                                            <div v-if="errors.email" class="invalid-feedback">
-                                                {{ errors.email }}
+                                            <label class="form-label">NIM</label>
+                                            <input type="text" v-model="form.nim_nidn" :class="{ 'is-invalid': errors.nim_nidn }" class="form-control" placeholder="nim_nidn">
+                                            <div v-if="errors.nim_nidn" class="invalid-feedback">
+                                                {{ errors.nim_nidn }}
                                             </div>
                                         </div>
                                         <div class="mb-3">
@@ -93,7 +93,7 @@
 
         setup() {
             const form = reactive({
-                email: '',
+                nim_nidn: '',
                 password: ''
             });
 
@@ -102,7 +102,7 @@
                 // send data to server
                 Inertia.post('/login', {
                     // data
-                    email: form.email,
+                    nim_nidn: form.nim_nidn,
                     password: form.password,
                 });
             }

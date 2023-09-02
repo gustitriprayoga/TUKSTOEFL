@@ -45,10 +45,11 @@
                             <hr>
                             <div class="text-center">
                                 <div v-if="exam.transaction.length > 0">
-                                    <h5><span class="badge badge-pill bg-primary ms-1">Enrolled</span></h5>
+                                    <h5><span class="badge badge-pill bg-primary ms-1">Sudah DI Ambil</span></h5>
                                 </div>
                                 <div v-else>
-                                    <h5><span class="badge badge-pill bg-danger ms-1">Rp. {{ formatPrice(exam.price) }}</span></h5>
+                                    <!-- <h5><span class="badge badge-pill bg-danger ms-1">Rp. {{ formatPrice(exam.price) }}</span></h5> -->
+                                    <h5><span class="badge badge-pill bg-danger ms-1"> Belum Di Ambil </span></h5>
                                 </div>
 
                             </div>
@@ -119,8 +120,8 @@
         setup() {
             const buyExam = (id) => {
                 Swal.fire({
-                    title: 'Apakah Anda yakin akan membeli paket ini ?',
-                    text: "jika membeli paket ini, silakan lakukan konfirmasi",
+                    title: 'Apakah Anda yakin akan Mengambil Paket Ini  ?',
+                    text: "jika mengambil paket ini, Anda Akan Di Alihkan Ke Halaman Try Out",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',

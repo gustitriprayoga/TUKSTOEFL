@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->timestamps();
             $table->uuid('user_id');
+            $table->string('jurusan');
             $table->foreignId('province_id');
             $table->foreignId('city_id');
             $table->foreignId('district_id');

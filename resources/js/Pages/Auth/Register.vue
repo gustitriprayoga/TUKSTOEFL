@@ -29,6 +29,26 @@
                                         </div>
 
                                         <div class="col-12">
+                                            <label class="form-label"> NIM / NIDN</label>
+                                            <input type="text" v-model="form.nim_nidn" :class="{ 'is-invalid': errors.nim_nidn }" class="form-control" placeholder="NIM/NIDN">
+                                            <div v-if="errors.nim_nidn" class="invalid-feedback">
+                                                {{ errors.nim }}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label">Jurusan</label>
+                                            <select v-model="form.jurusan" :class="{ 'is-invalid': errors.jurusan }" class="form-select">
+                                                <option value="">[ Pilih ]</option>
+                                                <option value="s1bidan">S1 Kebidanan</option>
+                                                <option value="s1gizi">S1 Gizi</option>
+                                            </select>
+                                            <div v-if="errors.jurusan" class="invalid-feedback">
+                                                {{ errors.jurusan }}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
                                             <label class="form-label">Jenis Kelamin</label>
                                             <select v-model="form.gender" :class="{ 'is-invalid': errors.gender }" class="form-select">
                                                 <option value="">[ Pilih ]</option>
@@ -48,7 +68,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-12">
+                                        <!-- <div class="col-12">
                                             <label class="form-label">Provinsi</label>
                                             <select  @change="cityData" v-model="form.province_id" :class="{ 'is-invalid': errors.province_id }" class="form-select">
                                                 <option value="">[ Pilih ]</option>
@@ -107,7 +127,7 @@
                                             <div v-if="errors.address" class="invalid-feedback">
                                                 {{ errors.address }}
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-12">
                                             <label class="form-label">Email</label>
@@ -199,6 +219,8 @@
                 email: '',
                 password: '',
                 password_confirmation: '',
+                nim_nidn: '',
+                jurusan: '',
                 province_id: '',
                 city_id: '',
                 district_id: '',
@@ -245,6 +267,8 @@
                     email: form.email,
                     password: form.password,
                     password_confirmation: form.password_confirmation,
+                    nim_nidn: form.nim_nidn,
+                    jurusan: form.jurusan,
                     province_id: form.province_id,
                     city_id: form.city_id,
                     district_id: form.district_id,

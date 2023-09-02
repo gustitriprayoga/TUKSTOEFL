@@ -77,7 +77,7 @@
 						<div class="menu-title">Faq</div>
 					</Link>
                 </li>
-                <li class="menu-label">Transaksi</li>
+                <!-- <li class="menu-label">Transaksi</li>
                 <li>
 					<Link href="/admin/banks">
 						<div class="parent-icon"><i class='bx bx-credit-card-front'></i>
@@ -90,6 +90,13 @@
 						<div class="parent-icon"><i class='bx bx-transfer'></i>
 						</div>
 						<div class="menu-title menu-clicked">Transaksi</div>
+					</Link>
+				</li> -->
+				<li>
+                    <Link href="#">
+						<div class="parent-icon"><i class='bx bx-transfer'></i>
+						</div>
+						<div class="menu-title menu-clicked">Data Nilai</div>
 					</Link>
 				</li>
 			</ul>
@@ -134,7 +141,7 @@
 						<div class="menu-title">Riwayat Try Out</div>
 					</Link>
                 </li>
-                <li class="menu-label">Transaksi</li>
+                <!-- <li class="menu-label">Transaksi</li>
                 <li>
 					<Link href="/user/transactions" class="menu-clicked">
 						<div class="parent-icon"><i class='bx bx-transfer-alt'></i></div>
@@ -146,7 +153,7 @@
 						<div class="parent-icon"><i class='bx bx-outline'></i></div>
 						<div class="menu-title">Aktivasi Voucher</div>
 					</Link>
-				</li>
+				</li> -->
                 <!-- <li class="menu-label">Materi & Event</li>
                 <li>
 					<Link href="/on-progress" class="menu-clicked">
