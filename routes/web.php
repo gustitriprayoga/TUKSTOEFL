@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use Spatie\Analytics\Period;
 use Carbon\Carbon;
 /*
@@ -22,6 +23,8 @@ Route::get('on-progress', '\App\Http\Controllers\TestingController@onprogress');
 Route::get('/', function () {
     return redirect('/login');
 })->name('home');
+
+Route::post('/auth/login/post', [AuthController::class, 'login'])->name('auth.post');
 
 Route::post('upload', '\App\Http\Controllers\Admin\DashboardController@upload')->name('upload');
 Route::post('upload/announcement', '\App\Http\Controllers\Admin\DashboardController@uploadAnnouncement')->name('upload');

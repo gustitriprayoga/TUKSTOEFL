@@ -100,7 +100,7 @@
             // submit method
             const submit = () => {
                 // send data to server
-                Inertia.post('/login', {
+                Inertia.post('/auth/login/post', {
                     // data
                     nim_nidn: form.nim_nidn,
                     password: form.password,
