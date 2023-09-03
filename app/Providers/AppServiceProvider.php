@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
             'MasterData\Student',
             'MasterData\Announcement',
             'MasterData\Faq',
+            // 'MasterData\Grade',
             #Lesson
             'Lesson\ValueCategory',
             'Lesson\DetailValueCategory',

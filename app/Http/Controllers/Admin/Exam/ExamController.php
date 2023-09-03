@@ -9,6 +9,7 @@ use App\Services\Contracts\MasterData\CategoryInterface as CategoryService;
 use App\Services\Contracts\Exam\GradeInterface as GradeService;
 use App\Http\Requests\Exam\ExamRequest;
 use App\Models\Exam\ValueCategoryExam;
+use App\Exports\ExamExport;
 
 class ExamController extends Controller
 {
@@ -88,6 +89,13 @@ class ExamController extends Controller
         ]);
     }
 
+    public function exportscores(){
+
+        return Excel::download(new ExamExport, 'Exam.xlsx');
+    }
+
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -135,6 +143,7 @@ class ExamController extends Controller
             return redirect()->back()->withInput($request->all());
         }
     }
+
 
     /**
      * Remove the specified resource from storage.

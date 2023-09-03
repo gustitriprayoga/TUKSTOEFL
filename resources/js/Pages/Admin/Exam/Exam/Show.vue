@@ -121,11 +121,14 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
+                        <button @click="exportToExcel">Export to Excel</button>
                         <table class="table mb-0">
                             <thead>
                                 <tr>
                                     <th>Peringkat</th>
                                     <th>Nama</th>
+                                    <th>Username</th>
+                                    <th>Jurusan</th>
                                     <th>Provinsi</th>
                                     <th>Kota</th>
                                     <th>Status</th>
@@ -143,6 +146,10 @@
                                     <td>
                                         {{ rankingExam.user.name }}
                                     </td>
+                                    <td>
+                                        {{ rankingExam.user.username }}
+                                    </td>
+                                    <td>{{ rankingExam.user.student.jurusan.name }}</td>
                                     <td>{{ rankingExam.user.student.province.name }}</td>
                                     <td>{{ rankingExam.user.student.city.name }}</td>
                                     <th>
@@ -203,7 +210,11 @@
             formatPrice(value) {
                 let val = (value/1).toFixed().replace('.', ',')
                 return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+            },
+            exportToExcel() {
+            window.open('/export-scores'); // Buka dalam tab atau jendela baru
             }
+
         },
         setup() {
             const unblocked = (id) => {

@@ -63,7 +63,7 @@
                                     </td>
                                     <td>
                                         <div class="d-flex order-actions">
-                                            <Link :href="`/admin/exams/${exam.id}`" class="ms-1"><i class='bx bx-grid-alt'></i></Link>
+                                            <Link :href="`/admin/exams/${exam.id}`" class="ms-1">CEK</Link>
                                             <Link :href="`/admin/exams/${exam.id}/edit`" class="ms-1"><i class='bx bxs-edit'></i></Link>
                                             <a href="#" @click.prevent="destroy(exam.id)" class="ms-1"><i class="bx bxs-trash"></i></a>
                                         </div>

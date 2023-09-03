@@ -48,7 +48,7 @@ Route::group(['middleware' => ['auth', 'admin', 'accountIsActive']], function() 
             Route::resource('announcements', 'AnnouncementController');
             // faqs
             Route::resource('faqs', 'FaqController');
-            Route::resource('grade', 'GradeController');
+            Route::get('grade', 'GradeController@index');
         });
 
         Route::group(['namespace' => 'Lesson'], function() {
@@ -79,6 +79,8 @@ Route::group(['middleware' => ['auth', 'admin', 'accountIsActive']], function() 
         Route::group(['namespace' => 'Exam'], function() {
             // vouchers
             Route::resource('exams', 'ExamController');
+            Route::get('scores', 'ExamController@show');
+            Route::get('/export-scores', 'ExamController@exportscores');
             Route::get('exams/grades/{id}/unblocked', 'ExamController@unblocked');
         });
     });
