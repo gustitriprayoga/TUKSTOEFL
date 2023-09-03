@@ -48,6 +48,7 @@ Route::group(['middleware' => ['auth', 'admin', 'accountIsActive']], function() 
             Route::resource('announcements', 'AnnouncementController');
             // faqs
             Route::resource('faqs', 'FaqController');
+            Route::resource('grade', 'GradeController');
         });
 
         Route::group(['namespace' => 'Lesson'], function() {

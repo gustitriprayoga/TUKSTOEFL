@@ -25,9 +25,9 @@
                                         </div>
                                         <div class="mb-3 mt-0">
                                             <label class="form-label">NIM</label>
-                                            <input type="text" v-model="form.nim_nidn" :class="{ 'is-invalid': errors.nim_nidn }" class="form-control" placeholder="nim_nidn">
-                                            <div v-if="errors.nim_nidn" class="invalid-feedback">
-                                                {{ errors.nim_nidn }}
+                                            <input type="text" v-model="form.username" :class="{ 'is-invalid': errors.username }" class="form-control" placeholder="username">
+                                            <div v-if="errors.username" class="invalid-feedback">
+                                                {{ errors.username }}
                                             </div>
                                         </div>
                                         <div class="mb-3">
@@ -93,7 +93,7 @@
 
         setup() {
             const form = reactive({
-                nim_nidn: '',
+                username: '',
                 password: ''
             });
 
@@ -102,7 +102,7 @@
                 // send data to server
                 Inertia.post('/auth/login/post', {
                     // data
-                    nim_nidn: form.nim_nidn,
+                    username: form.username,
                     password: form.password,
                 });
             }

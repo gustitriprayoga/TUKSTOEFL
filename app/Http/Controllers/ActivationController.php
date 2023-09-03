@@ -43,14 +43,14 @@ class ActivationController extends Controller
 
     public function storeForgotPassword(ForgotPasswordRequest $request)
     {
-        $student = Student::where('phone_number', $request->phone_number)->first();   
+        $student = Student::where('phone_number', $request->phone_number)->first();
         if($student) {
             $user = User::find($student->user_id);
 
             if($user->is_active == 0) {
                 return redirect()->back()->with('error', 'Untuk melakukan reset password, akun anda harus aktif terlebih dahulu, silakan hubungi admin untuk mendapatkan link aktivasi.');
             }
-            
+
             $namePassword = explode(" ", $student->user->name);
             $newPassword = strtolower($namePassword[0]).mt_rand(10000, 99999);
 
@@ -60,7 +60,7 @@ class ActivationController extends Controller
             $user->update([
                 'password' => bcrypt($newPassword)
             ]);
-            
+
             return redirect()->route('login')->with('success', 'Kami telah mengirimkan perubahan password ke nomor Whatsapp <b>'.$request->phone_number.'</b> silakan untuk di cek, terimakasih');
 
         } else {

@@ -93,7 +93,7 @@
 					</Link>
 				</li> -->
 				<li>
-                    <Link href="#">
+                    <Link href="/admin/grade">
 						<div class="parent-icon"><i class='bx bx-transfer'></i>
 						</div>
 						<div class="menu-title menu-clicked">Data Nilai</div>

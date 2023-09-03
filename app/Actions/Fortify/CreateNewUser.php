@@ -29,7 +29,7 @@ class CreateNewUser implements CreatesNewUsers
 
         $validator = Validator::make($input, [
             'name' => 'required|string|max:255',
-            'nim_nidn'   => 'required|string|max:50',
+            'username'   => 'required|string|max:50',
             'jurusan' => 'required|string|max:255',
             // 'province_id' => 'required',
             // 'city_id' => 'required',
@@ -44,7 +44,7 @@ class CreateNewUser implements CreatesNewUsers
         [], // messages
         [
             'name' => __('user.name'),
-            'nim_nidn' => _('user.nim_nidn'),
+            'username' => _('user.username'),
             'jurusan' => _('user.jurusan'),
             // 'province_id' => __('user.province_id'),
             // 'city_id' => __('user.city_id'),
@@ -62,7 +62,7 @@ class CreateNewUser implements CreatesNewUsers
             'id' => Uuid::uuid4()->getHex(),
             'name' => $input['name'],
             'email' => $input['email'],
-            'nim_nidn' => $input['nim_nidn'],
+            'username' => $input['username'],
             'password' => Hash::make($input['password']),
             'level' => 2,
             'is_active' => 1,
@@ -81,10 +81,10 @@ class CreateNewUser implements CreatesNewUsers
             'gender' => $input['gender'],
             'is_member' => 1,
         ]);
-          
+
         $message = "*Mohon dibaca dan dipahami!*\n\n_Hallo, saya admin dari ".env('APP_NAME').", akun anda telah terdaftar di platform kami, berikut link untuk aktivasi akun anda._\n\nNama: ".$user->name."\nEmail: ".$user->email."\n\nBerikut link verifikasi anda\n".env('APP_URL')."/user/".$user->id."/activation \n\n*Jika link tidak bisa diklik, silakan copy dan paste dibrowser anda.*\n\n_terimakasih telah menjadi bagian dari kami, semoga ".env('APP_NAME')." dapat membantu proses belajar anda. aamiin._";
         sendWhatsappNotification($user->student->phone_number, $message);
-        
+
         // $admin = User::find('20b2a4122c614bb68e41b1a6f3f37780');
         // $admin->notify(new SendNewUserNotification($user));
 

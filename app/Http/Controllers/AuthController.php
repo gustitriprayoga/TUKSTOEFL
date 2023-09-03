@@ -11,7 +11,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $cre = $request->validate([
-            'nim_nidn' => 'required',
+            'username' => 'required',
             'password' => 'required'
         ]);
 

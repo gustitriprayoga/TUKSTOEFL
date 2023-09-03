@@ -27,7 +27,7 @@ class User extends Authenticatable
         'id',
         'name',
         'email',
-        'nim_nidn',
+        'username',
         'password',
         'level',
         'is_active',
